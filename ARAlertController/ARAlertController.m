@@ -307,6 +307,20 @@
         [self.configurationHandlers setObject:configurationHandler forKey:textFieldHash];
     }
 }
+- (void)addTextFieldWithConfigurationHandler:(ARAlertControllerConfigurationHandler)configurationHandler keyboardType:(UIKeyboardType)keyboardType{
+    NSAssert(self.preferredStyle == ARAlertControllerStyleAlert, @"Text fields can only be added to an alert controller of style ARAlertControllerStyleAlert");
+    
+    UITextField *textField = UITextField.new;
+    textField.keyboardType = keyboardType;
+    
+    [self.mutableTextFields addObject:textField];
+    
+    if (configurationHandler)
+    {
+        NSString *textFieldHash = [NSString stringWithFormat:@"%ld", (unsigned long)textField.hash];
+        [self.configurationHandlers setObject:configurationHandler forKey:textFieldHash];
+    }
+}
 
 #pragma mark - Presentation Methods
 
