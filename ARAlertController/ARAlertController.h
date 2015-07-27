@@ -204,7 +204,7 @@ typedef void (^ARAlertControllerConfigurationHandler)(UITextField *textField);
  *  @param configurationHandler An ARAlertControllerConfigurationHandler block for configuring the text field prior to displaying the alert. This block has no return value and takes a single parameter corresponding to the text field object. Use that parameter to change the text field properties.
  */
 - (void)addTextFieldWithConfigurationHandler:(ARAlertControllerConfigurationHandler)configurationHandler;
-
+- (void)addTextFieldWithConfigurationHandler:(ARAlertControllerConfigurationHandler)configurationHandler keyboardType:(UIKeyboardType)keyboardType;
 #pragma mark - Presentation Methods
 
 /**
